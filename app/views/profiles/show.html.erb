@@ -13,6 +13,9 @@
   <%= @user.inverse_friends.count %>  followers
   </a>
 
+ <br /> <%= @user.statuses.count %> Statuses<br />
+<%= @user.comments.count %> Comments<br />
+
   <h4>Info</h4>
  <h5>Username: <%= @user.username %></h5>
   <h5>Email: <%= @user.email %></h5>

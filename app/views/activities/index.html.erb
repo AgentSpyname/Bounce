@@ -1,10 +1,16 @@
 <% if current_user %>
 <div class="left">
 
+
+
 <%= image_tag(current_user.gravatar_url) %> 
   <strong> <%= current_user.first_name %> <%= current_user.last_name %>(@<%= current_user.username %>)</strong>
 <br />
 <br />
+<%= current_user.statuses.count %> Statuses<br />
+<%= current_user.comments.count %> Comments<br />
+
+
   <a href="<%= following_user_path(current_user) %>">
   <%= current_user.friends.count %>
     following
@@ -14,7 +20,11 @@
   <a href="<%= followers_user_path(current_user) %>">
   <%= current_user.inverse_friends.count %>  followers
   </a>
+<br />
+<br />
+  <%= link_to "Post a New Status", new_status_path, class: "btn btn-success" %>
 
+<br />
 
 
 
@@ -24,8 +34,6 @@
 
 <hr />
 
-<%= link_to "Post a New Status", new_status_path, class: "btn btn-success" %>
-<hr />
 
 <% @activities.each do |activity| %>  
   <div class="activity">  

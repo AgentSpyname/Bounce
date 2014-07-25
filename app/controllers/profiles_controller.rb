@@ -10,15 +10,6 @@ class ProfilesController < ApplicationController
 
     @user = User.find_by_username(params[:id])
     if @user
-         
-@statuses = @user.statuses.paginate(:page       => params[:page],
-                           :per_page   => 10,
-                           :order      => 'created_at DESC',
-                      )
-@comments = @user.comments.paginate(:page       => params[:page],
-                           :per_page   => 10,
-                           :order      => 'created_at DESC',
-                      )
 
    @activities = PublicActivity::Activity.where(:owner_id => @user).limit(10).order("created_at DESC").paginate(page: params[:page], :per_page   => 10)
 

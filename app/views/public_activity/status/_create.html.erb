@@ -1,0 +1,16 @@
+ <%= link_to image_tag(activity.trackable.user.gravatar_url), profile_path(activity.trackable.user.username) %>  <strong> <%= activity.trackable.user.name %> Says:</strong>  <%= link_to activity.trackable.content, activity.trackable%>  
+<br />
+
+<div class="meta">
+  <%= link_to time_ago_in_words(activity.trackable.created_at) + " ago", activity.trackable %> <% if !activity.trackable.picture_file_name.nil?%>
+ |<%= link_to "Attatched Image",  activity.trackable.picture.url(:medium) %> <% end %> 
+
+  <% if current_user %>
+ <% if current_user.id == activity.trackable.user.id %>
+ | <%= link_to "Edit", edit_status_path(activity.trackable) %> | 
+     <%= link_to "Delete", activity.trackable, method: :delete, data: { confirm: "Are you sure your want to delete this status?"} %>
+
+     <% end %>
+     <% end %>
+
+</div>

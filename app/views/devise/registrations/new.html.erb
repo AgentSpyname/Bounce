@@ -1,0 +1,78 @@
+
+
+<div class="page-header clearfix">
+  <div class="pull-left">
+    <h1>Sign In<small> New User? Sign up here!</small></h1>
+  </div>
+ <div class="pull-right">
+    <div class="btn-group">
+      <%= link_to 'Sign In', "/login", class: "btn btn-default" %>
+     
+    </div>
+  </div>
+</div>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class="form-inputs">
+    <%= f.input :first_name, wrapper: :horizontal_input_group do %>
+      <%= f.input_field :first_name, class: "form-control" %>
+       <% end %>
+      </div>
+      <br />
+      <br/>
+<div class="form-inputs">
+    <%= f.input :last_name, wrapper: :horizontal_input_group do %>
+      <%= f.input_field :last_name, class: "form-control" %>
+       <% end %>
+      </div>
+      <br />
+      <br/>
+
+      <div class="form-inputs">
+    <%= f.input :username, wrapper: :horizontal_input_group do %>
+      <%= f.input_field :username, class: "form-control" %>
+       <% end %>
+      </div>
+      <br />
+      <br/>
+
+      <div class="form-inputs">
+    <%= f.input :email, wrapper: :horizontal_input_group do %>
+      <%= f.input_field :email, class: "form-control" %>
+       <% end %>
+      </div>
+      <br />
+      <br/>
+
+<div class="form-inputs">
+    <%= f.input :password, wrapper: :horizontal_input_group do %>
+      <%= f.input_field :password, class: "form-control" %>
+       <% end %>
+      </div>
+<br />
+<br />
+
+<div class="form-inputs">
+    <%= f.input :password_confirmation, wrapper: :horizontal_input_group do %>
+      <%= f.input_field :password_confirmation, class: "form-control" %>
+       <% end %>
+      </div>
+<br />
+<br />
+
+
+  <div class="form-actions col-sm-offset-3">
+
+
+
+
+  </div>
+</div>
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+          <%= f.button :submit, "Sign me up!", class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
+

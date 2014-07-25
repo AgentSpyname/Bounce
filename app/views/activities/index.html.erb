@@ -1,0 +1,31 @@
+<% if current_user %>
+<div class="center">
+<h1>My Feed</h1>  
+
+<hr />
+
+<%= link_to "Post a New Status", new_status_path, class: "btn btn-success" %>
+<hr />
+
+<% @activities.each do |activity| %>  
+  <div class="activity">  
+  <% if activity.trackable %> 
+
+  <%= render_activity activity %> 
+
+<% end %>
+  </div>  
+
+
+<% end %>
+
+   <%= will_paginate @activities %>
+
+  <% else %>
+  <div class="jumbotron">
+  <h1>Welcome to Bounce!</h1>
+  <p>A Twitter clone in Rails, with a few cool features of it's own...</p>
+  <p><a class="btn btn-primary btn-lg" role="button" href="/register">Try it Today!</a></p>
+</div>
+ <% end %>
+ </div>r

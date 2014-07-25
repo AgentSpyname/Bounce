@@ -1,0 +1,22 @@
+
+<%= simple_form_for(@comment) do |f| %>
+
+
+<div class="form-inputs">
+
+    <%= f.input :comment, wrapper: :horizontal_input_group, label:  false do %>
+      <%= f.input_field :comment,as: "text" ,class: "form-control", placeholder: "Share your thoughts on this status!"  %>
+       <% end %>
+       </div>
+
+    <%= f.hidden_field :user_id  %>
+
+  <div class="actions">
+  <br />
+  <br />
+  <br /><br />
+    <%= f.submit "Submit Comment", class: 'btn btn-primary' %>
+  </div>
+  <br />
+  <%= link_to "Back", @status %>
+<% end %>

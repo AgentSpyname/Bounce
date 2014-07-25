@@ -1,0 +1,47 @@
+<% if current_user %>
+<div class="page-header">
+  <h1>My Feed</h1>
+</div>
+<% if current_user %>
+<div class="status">
+<%= link_to "Post a New Status", new_status_path, class: "btn btn-success" %>
+<br />
+<br />
+</div>
+<% end %>
+
+<% @friends_statuses.each do |status| %>
+<div class="status">
+  <div class="span1">
+
+ <%= link_to image_tag(status.user.gravatar_url), profile_path(status.user.username) %>   <strong><%= status.user.first_name + " " + status.user.last_name %> Says...</strong>
+  
+ </div>
+   <div class= "span7">
+
+</div>
+  <p><%= status.content %></p>
+
+
+  <div class="meta">
+    <%= link_to time_ago_in_words(status.created_at) + " ago", status %> <% if !status.picture_file_name.nil?%>
+ |<%= link_to "Attatched Image",  status.picture.url(:medium) %> <% end %>
+
+ <% if current_user %>
+ <% if current_user.id == status.user.id %>
+ | <%= link_to "Edit", edit_status_path(status) %> | 
+     <%= link_to "Delete", status, method: :delete, data: { confirm: "Are you sure your want to delete this status?"} %>
+    
+ <% end %>
+<% end %>
+  
+   </span>
+  </div>
+</div>
+      <% end %>
+<ul class="pagination">
+  <%= will_paginate @friends %>
+
+</ul>
+
+<% end %>

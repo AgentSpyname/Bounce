@@ -1,0 +1,25 @@
+
+<div class="page-header">
+  <h1>All of the Users</h1>
+</div>
+
+<%= form_tag users_path, :method => 'get', :id => "users_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+
+<% end %>
+<% @users.each do |user| %>
+
+<div class="status">
+  <div class="span1">
+
+ <%= link_to image_tag(user.gravatar_url), profile_path(user.username) %>   <strong><%= user.first_name %>  <%= user.last_name %></strong>
+  
+ </div>
+ </div>
+<% end %>
+<ol class= "pagination">
+<%= will_paginate @users %>
+

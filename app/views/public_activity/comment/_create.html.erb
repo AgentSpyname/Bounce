@@ -1,0 +1,10 @@
+ <%= link_to image_tag(activity.owner.gravatar_url), profile_path(activity.owner.username) %> 
+<strong><%= activity.owner.name  if activity.owner %></strong> added comment <strong>"<%=activity.trackable.comment %> " </strong>
+<% if activity.trackable %> 
+<br />
+  <%= link_to "View Conversation",  activity.trackable.status %> 
+
+    
+<% else %>  
+  which has since been removed   
+<% end %>

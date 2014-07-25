@@ -1,0 +1,31 @@
+<h1>Editing status</h1>
+
+<%= simple_form_for @status do |f| %>
+
+
+
+
+
+<div class="form-inputs">
+
+    <%= f.input :content, wrapper: :horizontal_input_group, label:  false do %>
+      <%= f.input_field :content,as: "text" ,class: "form-control", placeholder: "What's up?"  %>
+       <% end %>
+      <br /><br />
+      <br /><br/>
+      <h3>Add or change an image</h3>
+  <%= f.file_field :picture %>
+<br />
+       <%= f.button :submit, class: 'btn btn-primary'%>
+       </div>
+       <br />
+<% end %>
+
+<br />
+Current Image
+<%= image_tag @status.picture.url %>
+<br />
+
+
+<%= link_to 'Show', @status %> |
+<%= link_to 'Back', statuses_path %>

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+ 
+
+<p>
+  <strong>User:</strong>
+  <%= @comment.user.first_name + " " + @comment.user.last_name %>
+</p>
+<br/ >
+<p>
+  <strong>Comment:</strong>
+  <%= @comment.comment %>
+</p>
+
+<br />
+<%= link_to 'Back', root_path %>

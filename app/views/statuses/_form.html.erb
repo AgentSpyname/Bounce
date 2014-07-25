@@ -1,0 +1,20 @@
+<%= simple_form_for @status do |f| %>
+
+
+
+
+
+<div class="form-inputs">
+
+    <%= f.input :content, wrapper: :horizontal_input_group, label:  false do %>
+      <%= f.input_field :content,as: "text" ,class: "form-control", placeholder: "What's up?"  %>
+       <% end %>
+      <br /><br />
+      <br /><br/>
+       <%= f.button :submit, class: 'btn btn-primary'%>
+       </div>
+<br />
+
+  <%= f.file_field :picture %>
+
+<% end %>

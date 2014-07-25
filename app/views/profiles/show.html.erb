@@ -1,0 +1,50 @@
+
+
+ <div class="element1">
+<%= image_tag(@user.gravatar_url) %> 
+  <span> <%= @user.first_name %> <%= @user.last_name %></span>
+
+  <a href="<%= following_user_path(@user) %>">
+    
+      <%= @user.friends.count %>
+    </strong>
+    following
+  </a>
+  <a href="<%= followers_user_path(@user) %>">
+
+      <%= @user.inverse_friends.count %>  followers
+
+  </a>
+
+
+
+</div>
+     <% if current_user %>
+   <% if current_user.friends.include?(@user) || current_user.username == @user.username %>
+
+
+<% else %>
+  <%= link_to "Follow", friendships_path(:friend_id => @user.id), :method => :post, class: "btn btn-primary"%>
+<% end %>
+<% end %>
+
+  
+ <div class="element2">
+
+
+<div class="page-header">
+<h3><%= @user.name %>'s Feed</h3>
+</div>
+ <% @activities.each do |activity| %>  
+  <div class="activity">  
+  <% if activity.trackable %> 
+
+  <%= render_activity activity %> 
+</div>
+<% end %>
+<% end %>
+
+</div>
+
+
+

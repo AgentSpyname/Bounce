@@ -1,8 +1,0 @@
-== README
-
-A social network in Rails! 
-
-Please Note: Adjust GEMFILE accordingly. The current GEMFILE is compatible with Ruby 2.0.0, Rails 4.0.5. The Gemfile is also optimized for OSX 10.10 Yosemite.
-
-
-Gemfile 10.9: Ruby 1.9.3, and Rails 4.0.5 can be renamed for Gemfile. It also optimized for OSX 10.9 Mavericks. Production DB Included.

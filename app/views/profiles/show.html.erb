@@ -1,6 +1,6 @@
 <div class="left">
 <%= image_tag(@user.gravatar_url) %> 
-  <strong> <%= @user.first_name %> <%= @user.last_name %></strong>
+  <strong> <%= @user.first_name %> <%= @user.last_name %>(@<%= @user.username %>)</strong>
 <br />
 <br />
   <a href="<%= following_user_path(@user) %>">

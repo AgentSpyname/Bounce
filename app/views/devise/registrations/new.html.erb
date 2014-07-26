@@ -1,5 +1,5 @@
 
-
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <div class="page-header clearfix">
   <div class="pull-left">
     <h1>Sign In<small> New User? Sign up here!</small></h1>
@@ -12,7 +12,7 @@
   </div>
 </div>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
 <div class="form-inputs">
     <%= f.input :first_name, wrapper: :horizontal_input_group do %>
       <%= f.input_field :first_name, class: "form-control" %>

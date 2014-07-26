@@ -1,3 +1,5 @@
+Introduction
+------------
 ==Bounce v0:Ruby on Rails Social Network
 Bounce is a customizable, free social network. Bounce is similar to Insosh an old project similar to Bounce. 
 For non-coder/hacker types, the live preview of Bounce will be released in a few days. 
